@@ -43,7 +43,7 @@
 
     window.addEventListener('keydown', e => {
         let keyPressed = e.key
-        console.log(e)
+        // console.log(e)
         if (!e.altKey && !e.ctrlKey) {
             document.getElementById('typing').innerText = keyPressed
             matchLetter(letter, keyPressed)
