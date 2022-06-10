@@ -1,0 +1,13 @@
+body{
+    background: rgb(31, 23, 23);
+    text-align: center;
+}
+h2 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 90px;
+}
+p{
+    color: white;
+    font-size: 50px;
+}
