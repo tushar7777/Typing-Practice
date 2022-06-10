@@ -1,0 +1,55 @@
+<html>
+<link rel="stylesheet" href="style.css" />
+<style>
+
+</style>
+
+<body>
+    <p id="score">0</p>
+    <h2 id="letter"></h2>
+    <p id="typing">_</p>
+</body>
+<script>
+    let letter
+    let score = 0
+
+    window.onload = function () {
+        letter = makeid()
+        document.getElementById("letter").innerText = letter
+    }
+    function changeLetter() {
+        letter = makeid()
+        document.getElementById("letter").innerText = letter
+    }
+
+    function matchLetter(randomChar, keyPressed) {
+        console.log(randomChar, keyPressed)
+        if (randomChar == keyPressed) {
+            score++
+        } else {
+            score--
+        }
+
+        changeLetter()
+        document.getElementById('score').innerText = score
+    }
+
+    function makeid(length) {
+        var characters = 'abcdefghijklmnopqrstuvwxyz0123456789'; // 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        result = characters.charAt(Math.floor(Math.random() * charactersLength));
+        return result;
+    }
+
+    window.addEventListener('keydown', e => {
+        let keyPressed = e.key
+        console.log(e)
+        if (!e.altKey && !e.ctrlKey) {
+            document.getElementById('typing').innerText = keyPressed
+            matchLetter(letter, keyPressed)
+        }
+    })
+
+</script>
+
+</html>
